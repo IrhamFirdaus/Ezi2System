@@ -292,7 +292,7 @@
                 })
 
                 get(child(dbref, 'Payment/' + y)).then((snapshot)=>{
-                let N_baki = Number(snapshot.val().total)  - Number(snapshot.val().total_payment) - Number(cn) - Number(x_discount);
+                let N_baki = Number(snapshot.val().total)  - Number(snapshot.val().total_payment) + Number(cn) - Number(x_discount);
                     update(ref(db,'Payment/' + y), {
                         baki : N_baki,
                     });
