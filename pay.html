@@ -353,10 +353,10 @@
                             if(n_baki == 0 ){
                                 status_payment.innerHTML = `<div style="color:green;font-weight:bold">FULLY PAID</div>`;
                             }
-                            else if(n_baki > 0 ){
+                            else if(n_baki < 0 ){
                                 status_payment.innerHTML = `<div style="color:yellow;font-weight:bold">PARTIALLY PAID</div>`;
                             }
-                            else if (n_baki < 0 ) {
+                            else if (n_baki > 0 ) {
                                 status_payment.innerHTML = `<div style="color:blue;font-weight:bold">OVER PAID</div>`;
                             }
 
