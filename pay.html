@@ -346,17 +346,17 @@
                             creditnote.innerHTML = "CREDIT NOTE : RM "+ x;
                             //discount.innerHTML = "DISCOUNT : (- RM " + x_discount + ")";
                             baki.innerHTML ="FINAL BALANCE : RM " + Number(snapshot.val().baki);
-                            let n_baki = (Number(snapshot.val().baki) - Number(x_discount));
+                            let n_baki = (Number(snapshot.val().baki));
                             update(ref(db,'CreditNote/' + y), {
                             baki : n_baki,
                             })
                             if(n_baki == 0 ){
                                 status_payment.innerHTML = `<div style="color:green;font-weight:bold">FULLY PAID</div>`;
                             }
-                            else if(n_baki < 0 ){
+                            else if(n_baki > 0 ){
                                 status_payment.innerHTML = `<div style="color:yellow;font-weight:bold">PARTIALLY PAID</div>`;
                             }
-                            else if (n_baki > 0 ) {
+                            else if (n_baki < 0 ) {
                                 status_payment.innerHTML = `<div style="color:blue;font-weight:bold">OVER PAID</div>`;
                             }
 
