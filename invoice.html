@@ -326,7 +326,7 @@
       address.value = snapshot.val().alamat;
       details.value = snapshot.val().details;
       if(snapshot.exists()){
-      let N_baki = Number(snapshot.val().total)  - Number(snapshot.val().total_payment)- Number(cn) -Number(x_discount);
+      let N_baki = Number(snapshot.val().total)  - Number(snapshot.val().total_payment)+ Number(cn) -Number(x_discount);
       if(N_baki == 0 && snapshot.val().total != 0){
         update(ref(db,'Payment/' + y), {
           baki : N_baki,
